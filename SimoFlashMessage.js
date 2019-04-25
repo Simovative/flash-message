@@ -1,6 +1,5 @@
 /**
  * @author SE, MG
- * @todo: funktioniert nicht in commu, ggf. umstrukturieren in anderes konstrukt
  */
 class SimoFlashMessage {
 	
@@ -57,20 +56,6 @@ class SimoFlashMessage {
 	 */
 	showInfo(title, message) {
 		this._show(title, message, 'simo-flash-message-error-info', 'far fa-info-circle', false)
-	}
-	
-	/**
-	 * @author SE
-	 * @param {jqXHR} jqXhr
-	 * @return {void}
-	 */
-	handleAjaxErrorResponse(jqXhr) {
-		let response = jqXhr.responseText;
-		let logId = $('.simo-log-id', response).html();
-		let message = $('.topic h1', response).html();
-		let errorMessage = '<div style="margin-bottom:5px;">' + logId + '</div>' + message;
-		let title = translator.translate('general:error_request_short');
-		this.showError(title, errorMessage);
 	}
 	
 	/**
