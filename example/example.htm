@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<link rel="stylesheet" href="simoFlashMessage.css" />
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="SimoFlashMessage.js" type="text/javascript"></script>
+
+	<script>
+		$(function() {
+			flashMessage = new SimoFlashMessage();
+		});
+	</script>
+</head>
+<body>
+	<button type="button" onclick="flashMessage.showError('Error', 'Some Error Occured')">Error</button>
+	<button type="button" onclick="flashMessage.showSuccess('Success', 'Successfull')">Success</button>
+	<button type="button" onclick="flashMessage.showInfo('Info', 'Some information')">Info</button>
+	<button type="button" onclick="flashMessage.showWarning('Warning', 'Warning!')">Warning</button>
+</body>
+</html>

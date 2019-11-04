@@ -55,7 +55,7 @@ class SimoFlashMessage {
 	 * @return {void}
 	 */
 	showInfo(title, message) {
-		this._show(title, message, 'simo-flash-message-error-info', 'far fa-info-circle', false)
+		this._show(title, message, 'simo-flash-message-info', 'far fa-info-circle', false)
 	}
 	
 	/**
@@ -111,5 +111,15 @@ class SimoFlashMessage {
 				$(this).remove();
 			});
 		});
+	}
+	
+	/**
+	 * @author SE
+	 * @param {jqXHR} jqXhr
+	 * @return {void}
+	 */
+	handleAjaxErrorResponse(jqXhr) {
+		let response = jqXhr.responseText;
+		this.showError('Request error Occured', response);
 	}
 }
